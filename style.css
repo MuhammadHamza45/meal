@@ -1,0 +1,44 @@
+body {
+  background-color: #2d2013;
+}
+hr {
+  background-color: white;
+  height: 2px;
+}
+
+h3 {
+  text-align: center;
+}
+.search-style {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  color: white;
+}
+.row {
+  text-align: center;
+  margin: auto;
+}
+.col {
+  color: #d57d1f;
+  text-align: center;
+}
+
+.img-style {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+.img-country-style {
+  font-size: 14px;
+}
+#browse-name {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  background-color: #694b2d;
+}
