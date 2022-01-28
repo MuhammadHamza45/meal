@@ -12,21 +12,32 @@ function getEndPointData(endPointURL,titleKey,imgKey,insertId, callBackFunction)
     xhr.send();
   }
 
-
-
-
-
-function generateCell(title,img,insertId) {
+  function generateCell(title,img,insertId) {
 
     let check = $.get("templete.html", (data) => {
         let newData = data.replace("##IMG##", img);
         // let newData = data.replace("##IMG##", img);
         newData = newData.replace("##TITLE##", title);
-        // console.log(newData);
+        console.log(newData);
         document.getElementById(insertId).innerHTML+=newData;
     });
-
+   
 }
+
+
+
+
+// function generateCell(title,img,insertId) {
+
+//     let check = $.get("templete.html", (data) => {
+//         let newData = data.replace("##IMG##", img);
+//         // let newData = data.replace("##IMG##", img);
+//         newData = newData.replace("##TITLE##", title);
+//         // console.log(newData);
+        
+//     });
+
+// }
 
 
 function bindingData(data,titleKey,imgKey,insertId) {
