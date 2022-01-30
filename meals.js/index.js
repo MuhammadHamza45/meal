@@ -61,7 +61,7 @@ function bindingData(data,titleKey,imgKey,insertId) {
        document.getElementById(insertId).append(htmlbodydata(title,img));
     }
 }
-getEndPointData("latestMeal.json","strMeal","strMealThumb","latest-row", bindingData);
-getEndPointData("popularMeal.json","strCategory","strCategoryThumb","popular-row", bindingData);
-getEndPointData("randomMeal.json","strMeal","strMealThumb","random-row", bindingData);
-getEndPointData("randomIngredients.json","strCategory","strCategoryThumb","ingredient-row", bindingData);
+getEndPointData("/meals.json/latestMeal.json","strMeal","strMealThumb","latest-row", bindingData);
+getEndPointData("/meals.json/popularMeal.json","strCategory","strCategoryThumb","popular-row", bindingData);
+getEndPointData("/meals.json/randomMeal.json","strMeal","strMealThumb","random-row", bindingData);
+getEndPointData("/meals.json/randomIngredients.json","strCategory","strCategoryThumb","ingredient-row", bindingData);

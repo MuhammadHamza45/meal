@@ -2,7 +2,7 @@
 function getLatestMeal() {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("Get", "latestMeal.json");
+    xhr.open("Get", "/meals.json/latestMeal.json");
     xhr.onload = function () {
         const datax = JSON.parse(xhr.responseText);
         const data = datax.meals;
@@ -33,7 +33,7 @@ function getLatestMeal() {
 function getPopularMeal() {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("Get", "popularMeal.json");
+    xhr.open("Get", "/meals.json/popularMeal.json");
     xhr.onload = function () {
         const datax = JSON.parse(xhr.responseText);
         const data = datax.categories;
@@ -66,7 +66,7 @@ function getPopularMeal() {
 function getRendomMeal() {
 
     const rm = new XMLHttpRequest();
-    rm.open("Get", "randomMeal.json");
+    rm.open("Get", "/meals.json/randomMeal.json");
     rm.onload = function () {
         const datax = JSON.parse(rm.responseText);
         const data = datax.meals;
@@ -97,7 +97,7 @@ function getRendomMeal() {
 function getRandomIngredientsMeal() {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("Get", "randomIngredients.json");
+    xhr.open("Get", "/meals.json/randomIngredients.json");
     xhr.onload = function () {
         const datax = JSON.parse(xhr.responseText);
         const data = datax.categories;
@@ -129,7 +129,7 @@ function getRandomIngredientsMeal() {
 function getCountryFlag() {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("Get", "country.json");
+    xhr.open("Get", "/meals.json/country.json");
     xhr.onload = function () {
         const datax = JSON.parse(xhr.responseText);
         const data = datax.country;
