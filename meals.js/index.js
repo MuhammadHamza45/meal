@@ -12,12 +12,42 @@ function getEndPointData(endPointURL,titleKey,imgKey,insertId, callBackFunction)
     xhr.send();
   }
 
-  function htmlbodydata(nameoflogo, logo) {
-    let template = document.querySelector("#DhtmlContent").content.cloneNode(true);
-    template.querySelector("img").setAttribute("src", logo);
-    template.querySelector("p").textContent = nameoflogo;
+  function generateCell(title, img) {
+    let template = document.querySelector("#html-templete").content.cloneNode(true);
+    template.querySelector("img").setAttribute("src", img);
+    template.querySelector("p").textContent = title;
     return template;
 }
+
+
+
+function bindingData(data,titleKey,imgKey,insertId) {
+ 
+
+
+    for(let i=0; i< (data).length;i++){
+        var title=data[i][titleKey];
+        var img = data[i][imgKey];
+       
+       document.getElementById(insertId).append(generateCell(title,img));
+    }
+}
+getEndPointData("/meals.json/latestMeal.json","strMeal","strMealThumb","latest-row", bindingData);
+getEndPointData("/meals.json/popularMeal.json","strCategory","strCategoryThumb","popular-row", bindingData);
+getEndPointData("/meals.json/randomMeal.json","strMeal","strMealThumb","random-row", bindingData);
+getEndPointData("/meals.json/randomIngredients.json","strCategory","strCategoryThumb","ingredient-row", bindingData);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -48,20 +78,3 @@ function getEndPointData(endPointURL,titleKey,imgKey,insertId, callBackFunction)
 //     });
 
 // }
-
-
-function bindingData(data,titleKey,imgKey,insertId) {
- 
-
-
-    for(let i=0; i< (data).length;i++){
-        var title=data[i][titleKey];
-        var img = data[i][imgKey];
-       
-       document.getElementById(insertId).append(htmlbodydata(title,img));
-    }
-}
-getEndPointData("/meals.json/latestMeal.json","strMeal","strMealThumb","latest-row", bindingData);
-getEndPointData("/meals.json/popularMeal.json","strCategory","strCategoryThumb","popular-row", bindingData);
-getEndPointData("/meals.json/randomMeal.json","strMeal","strMealThumb","random-row", bindingData);
-getEndPointData("/meals.json/randomIngredients.json","strCategory","strCategoryThumb","ingredient-row", bindingData);
